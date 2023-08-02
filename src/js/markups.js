@@ -13,7 +13,7 @@ export const createActiveNotesListMarkup = function (notes) {
   const markup = activeNotes
     .map(item => {
       const { name, created, category, content, dates, id } = item;
-
+      const datesList = dates.filter(date => date !== '').join(', ');
       const categoryIcon = category => {
         switch (category) {
           case 'Task':
@@ -31,8 +31,8 @@ export const createActiveNotesListMarkup = function (notes) {
           <span class="notes-active__name">${textCutter(name, 15)}</span>
           <span class="notes-active__create">${created}</span>
           <span class="notes-active__category">${category}</span>
-          <span class="notes-active__content">${textCutter(content, 25)}</span>
-          <span class="notes-active__date">${dates}</span>
+          <span class="notes-active__content">${textCutter(content, 22)}</span>
+          <span class="notes-active__date">${textCutter(datesList, 16)}</span>
           <div class="button-wrapper">
             <button id=${'ed_' + id} class="button__edit-note" type="button">${editIcon}</button>
             <button id=${'arch_' + id} class="button__archive-note" type="button">${archiveIcon}</button>
@@ -96,7 +96,7 @@ export const openNoteDetailsMarkup = function (id) {
     .map(item => {
       const { name, created, category, content, dates, archived } = item;
       const status = archived ? 'Archived' : 'Active';
-
+      const datesList = dates.filter(date => date !== '').join(', ');
       const categoryIcon = category => {
         switch (category) {
           case 'Task':
@@ -123,7 +123,7 @@ export const openNoteDetailsMarkup = function (id) {
           <span class="note__content">${content}</span>
            <div class="note__block-wrapper">
               <div class="note__info-wrapper">
-              <span class="note__date">Deadline: ${dates}</span>
+              <span class="note__date">Date: ${datesList}</span>
               <span class="note__status">Status: ${status}</span>
               </div>
               <div class="note__button-wrapper">

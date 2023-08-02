@@ -28,7 +28,6 @@ export const textCutter = function (text, maxSymbolsNumber) {
 export const setFormValue = function (note) {
   Array.from(document.querySelectorAll('.form__radio-input')).filter(input => input.value === note.category)[0].checked = true;
   nameInput.value = note.name;
-  dateInput.value = convertDateFormat(note.dates);
   contentInput.value = note.content;
 };
 
@@ -59,11 +58,25 @@ export const getFormValue = function (filteredNotes) {
     created: createdValue,
     category: categoryValue,
     content: contentValue,
-    dates: dateValue,
+    dates: [formatSlashDate(dateValue)],
     archived: false,
   };
   return newNote;
 };
+
+function formatSlashDate(date) {
+  try {
+    if (date !== '') {
+      const parts = date.split('-');
+      const year = parts[0];
+      const month = parts[1];
+      const day = parts[2];
+      return `${day}/${month}/${year}`;
+    } else {
+      return '';
+    }
+  } catch (error) {}
+}
 
 function formatDate(date) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -72,19 +85,6 @@ function formatDate(date) {
   const year = date.getFullYear();
   const formattedDate = `${month} ${day}, ${year}`;
   return formattedDate;
-}
-
-function convertDateFormat(date) {
-  if (date === '') {
-    return null;
-  }
-
-  const parts = date.split('/');
-  const day = parts[0].padStart(2, '0');
-  const month = parts[1].padStart(2, '0');
-  const year = parts[2];
-
-  return `${year}-${month}-${day}`;
 }
 
 export const setElementsListeners = function () {
@@ -110,8 +110,8 @@ export const setElementsListeners = function () {
   editNoteButtons.forEach(button => button.addEventListener('click', editNote));
 
   const submitCreatingNewNoteButton = document.querySelector('.modal__form-submit.js-create');
-  submitCreatingNewNoteButton?.addEventListener('click', submitCreatingNote);
+  submitCreatingNewNoteButton.addEventListener('click', submitCreatingNote);
 
   const submitEditingNoteButton = document.querySelector('.modal__form-submit.js-edit');
-  submitEditingNoteButton?.addEventListener('click', submitEditingNote);
+  submitEditingNoteButton.addEventListener('click', submitEditingNote);
 };

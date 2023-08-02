@@ -5,7 +5,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Task',
     content: 'I must create a note app on JS for Radency intern program',
-    dates: '01/08/2023',
+    dates: ['01/08/2023'],
     archived: false,
   },
   {
@@ -14,7 +14,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Idea',
     content: 'I can use my previous projects to do faster all my tasks ',
-    dates: '01/08/2023',
+    dates: ['01/08/2023'],
     archived: false,
   },
   {
@@ -23,7 +23,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Task',
     content: 'I must create a project on React for Radency intern program',
-    dates: '04/08/2023',
+    dates: ['04/08/2023'],
     archived: false,
   },
   {
@@ -32,7 +32,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Task',
     content: 'I must create a project on Node.js for Radency intern program',
-    dates: '07/08/2023',
+    dates: ['07/08/2023'],
     archived: false,
   },
 
@@ -42,7 +42,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Random Thought',
     content: "The English Premier League starts on August 11 - don't forget to watch it",
-    dates: '11/08/2023',
+    dates: ['11/08/2023'],
     archived: false,
   },
   {
@@ -51,7 +51,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Random Thought',
     content: 'I want to go fishing',
-    dates: '',
+    dates: ['12/08/2023', '15/08/2023'],
     archived: true,
   },
   {
@@ -60,7 +60,7 @@ const initialsNotes = [
     created: 'July 31, 2023',
     category: 'Idea',
     content: 'If I done my JS-project faster then I will definitely go fishing',
-    dates: '',
+    dates: [],
     archived: false,
   },
 ];

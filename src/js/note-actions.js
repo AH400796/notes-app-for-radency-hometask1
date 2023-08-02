@@ -114,8 +114,11 @@ export const submitEditingNote = function (e) {
   }
   const editedNote = getFormValue(filteredNotes);
   const editNoteIndex = Number(document.querySelector('.modal__form-submit.js-edit').dataset.noteid);
+
   filteredNotes = filteredNotes.map(note => {
     if (note.id === editNoteIndex) {
+      editedNote.dates = Array.from(new Set([...note.dates, ...editedNote.dates]));
+
       return { ...note, ...editedNote };
     } else {
       return note;

@@ -14,8 +14,6 @@
   "author": "Andrii Hokhman, a.hokhman@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21",
-    "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {

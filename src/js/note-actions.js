@@ -2,11 +2,10 @@ import initialsNotes from './notes';
 import { openModal } from './modal';
 import { openModalForm, onCloseModal } from './modal-form';
 import { createActiveNotesListMarkup, createNotesCategoryListMarkup, openNoteDetailsMarkup, openCategoryDetailsFormMarkup } from './markups';
-import { getFormValue } from './helpers';
-import { setElementsListeners } from './helpers';
+import { getFormValue, setFormValue } from './helpers';
+import { setElementsListeners, newNoteForm } from './helpers';
 
 export let filteredNotes = [...initialsNotes];
-const newNoteForm = document.querySelector('.form');
 
 export const deleteNote = function (e) {
   e.stopPropagation();
@@ -64,16 +63,49 @@ export const openCategory = function (e) {
 };
 
 export const createNote = function () {
-  openModalForm();
+  openModalForm('Create Note');
   newNoteForm.reset();
   setElementsListeners();
 };
 
 export const submitCreatingNote = function (e) {
   e.preventDefault();
-  filteredNotes.push(getFormValue(filteredNotes));
+  console.log('CREATE');
+  const newNote = getFormValue(filteredNotes);
+  filteredNotes.push(newNote);
   createActiveNotesListMarkup(filteredNotes);
   createNotesCategoryListMarkup(filteredNotes);
+  setElementsListeners();
+  onCloseModal();
+};
+
+export const editNote = function (e) {
+  e.stopPropagation();
+  const editNoteIndex = Number(e.currentTarget.id.replace(/ed_/g, ''));
+  const editNote = filteredNotes.filter(note => note.id === editNoteIndex)[0];
+  openModalForm('Edit Note', editNoteIndex);
+  document.body.classList.remove('show-modal');
+  setFormValue(editNote);
+  setElementsListeners();
+};
+
+export const submitEditingNote = function (e) {
+  e.preventDefault();
+  setElementsListeners();
+  const editedNote = getFormValue(filteredNotes);
+  const editNoteIndex = Number(document.querySelector('.modal__form-submit').dataset.noteid);
+  console.log(editNoteIndex);
+
+  filteredNotes = filteredNotes.map(note => {
+    if (note.id === editNoteIndex) {
+      return { ...note, ...editedNote };
+    } else {
+      return note;
+    }
+  });
+  createActiveNotesListMarkup(filteredNotes);
+  createNotesCategoryListMarkup(filteredNotes);
+  document.body.classList.remove('show-modal-form');
   setElementsListeners();
   onCloseModal();
 };

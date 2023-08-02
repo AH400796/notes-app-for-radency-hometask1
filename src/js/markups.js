@@ -179,7 +179,7 @@ export const openCategoryDetailsFormMarkup = function (category) {
             <span class="category__head-name">Name</span>
             <span class="category__head-status">Status</span>
             <span class="category__head-unarchive">Unarchive</span>            
-            </div>  
+            </div>
             <ul class="category__list">${categoryNotesList}<ul>
             </div>`;
 

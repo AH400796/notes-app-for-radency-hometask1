@@ -1,4 +1,4 @@
-const notes = [
+const initialsNotes = [
   {
     id: 1,
     name: 'JS Project',
@@ -65,4 +65,4 @@ const notes = [
   },
 ];
 
-export default notes;
+export default initialsNotes;

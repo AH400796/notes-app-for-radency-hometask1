@@ -214,3 +214,7 @@ export const editIcon = `<svg  style=" fill: inherit" width="24" height="24" vie
 export const archiveIcon = `<svg  style=" fill: inherit" width="24" height="24" viewBox="0 0 512 512">
 <path d="M416 32h-320l-96 96v336c0 8.837 7.163 16 16 16h480c8.836 0 16-7.163 16-16v-336l-96-96zM256 416l-160-128h96v-96h128v96h96l-160 128zM77.255 96l32-32h293.489l32 32h-357.489z"></path>
 </svg>`;
+
+export const unArchiveIcon = `<svg  style=" fill: inherit" width="24" height="24" viewBox="0 0 512 512">
+<path d="M416 32h-320l-96 96v336c0 8.837 7.163 16 16 16h480c8.836 0 16-7.163 16-16v-336l-96-96zM320 320v96h-128v-96h-96l160-128 160 128h-96zM77.255 96l32-32h293.488l32 32h-357.488z"></path>
+</svg>`;

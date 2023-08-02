@@ -28,10 +28,10 @@ export const createActiveNotesListMarkup = function (notes) {
 
       return `<li id=${id} class="notes-active__list-item">      
           <div class="notes-active__list-item-icon">${categoryIcon(item.category)}</div>
-          <span class="notes-active__name">${textCutter(name, 20)}</span>
+          <span class="notes-active__name">${textCutter(name, 15)}</span>
           <span class="notes-active__create">${created}</span>
           <span class="notes-active__category">${category}</span>
-          <span class="notes-active__content">${textCutter(content, 30)}</span>
+          <span class="notes-active__content">${textCutter(content, 25)}</span>
           <span class="notes-active__date">${dates}</span>
           <div class="button-wrapper">
             <button id=${'ed_' + id} class="button__edit-note" type="button">${editIcon}</button>

@@ -1,9 +1,7 @@
 import initialsNotes from './notes';
-import { openModal } from './modal';
-import { openModalForm, onCloseModal } from './modal-form';
+import { openModal, openModalForm, onCloseModal } from './modal';
 import { createActiveNotesListMarkup, createNotesCategoryListMarkup, openNoteDetailsMarkup, openCategoryDetailsFormMarkup } from './markups';
-import { getFormValue, setFormValue } from './helpers';
-import { setElementsListeners, newNoteForm } from './helpers';
+import { getFormValue, setFormValue, nameInput, contentInput, categoryInput, setElementsListeners, newNoteForm } from './helpers';
 
 export let filteredNotes = [...initialsNotes];
 
@@ -70,7 +68,18 @@ export const createNote = function () {
 
 export const submitCreatingNote = function (e) {
   e.preventDefault();
-  console.log('CREATE');
+  if (nameInput.value.trim() === '') {
+    alert('"Note name" is required');
+    return;
+  }
+  if (contentInput.value.trim() === '') {
+    alert('"Note description" is required');
+    return;
+  }
+  if (Array.from(categoryInput).filter(input => input.checked).length !== 1) {
+    alert('"Category" is required');
+    return;
+  }
   const newNote = getFormValue(filteredNotes);
   filteredNotes.push(newNote);
   createActiveNotesListMarkup(filteredNotes);
@@ -91,11 +100,20 @@ export const editNote = function (e) {
 
 export const submitEditingNote = function (e) {
   e.preventDefault();
-  setElementsListeners();
+  if (nameInput.value.trim() === '') {
+    alert('"Note name" is required');
+    return;
+  }
+  if (contentInput.value.trim() === '') {
+    alert('"Note description" is required');
+    return;
+  }
+  if (Array.from(categoryInput).filter(input => input.checked).length !== 1) {
+    alert('"Category" is required');
+    return;
+  }
   const editedNote = getFormValue(filteredNotes);
-  const editNoteIndex = Number(document.querySelector('.modal__form-submit').dataset.noteid);
-  console.log(editNoteIndex);
-
+  const editNoteIndex = Number(document.querySelector('.modal__form-submit.js-edit').dataset.noteid);
   filteredNotes = filteredNotes.map(note => {
     if (note.id === editNoteIndex) {
       return { ...note, ...editedNote };

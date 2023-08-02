@@ -11,6 +11,11 @@ import {
 } from './note-actions';
 
 export const newNoteForm = document.querySelector('.form');
+export const nameInput = document.querySelector('.form__input-name');
+export const categoryInput = document.querySelectorAll('.form__radio-input');
+export const contentInput = document.querySelector('.form__textarea');
+const submitButton = document.querySelector('.modal__form-submit.js-edit');
+const dateInput = document.querySelector('.form__input-date');
 
 export const textCutter = function (text, maxSymbolsNumber) {
   if (text.length - 3 > maxSymbolsNumber) {
@@ -22,17 +27,17 @@ export const textCutter = function (text, maxSymbolsNumber) {
 
 export const setFormValue = function (note) {
   Array.from(document.querySelectorAll('.form__radio-input')).filter(input => input.value === note.category)[0].checked = true;
-  document.querySelector('.form__input-name').value = note.name;
-  document.querySelector('.form__input-date').value = convertDateFormat(note.dates);
-  document.querySelector('.form__textarea').value = note.content;
+  nameInput.value = note.name;
+  dateInput.value = convertDateFormat(note.dates);
+  contentInput.value = note.content;
 };
 
 export const getFormValue = function (filteredNotes) {
-  const categoryValue = Array.from(document.querySelectorAll('.form__radio-input')).filter(input => input.checked)[0].value;
-  const nameValue = document.querySelector('.form__input-name').value;
-  const dateValue = document.querySelector('.form__input-date').value;
-  const contentValue = document.querySelector('.form__textarea').value;
-  const submitButton = document.querySelector('.modal__form-submit');
+  const categoryValue = Array.from(categoryInput).filter(input => input.checked)[0].value;
+  const nameValue = nameInput.value;
+  const dateValue = dateInput.value;
+  const contentValue = contentInput.value;
+
   const idValue =
     submitButton.dataset.noteid !== ''
       ? Number(submitButton.dataset.noteid)
@@ -73,10 +78,12 @@ function convertDateFormat(date) {
   if (date === '') {
     return null;
   }
+
   const parts = date.split('/');
   const day = parts[0].padStart(2, '0');
   const month = parts[1].padStart(2, '0');
   const year = parts[2];
+
   return `${year}-${month}-${day}`;
 }
 

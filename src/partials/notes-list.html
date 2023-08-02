@@ -1,0 +1,36 @@
+<section class="notes__section">
+  <div class="notes__container container">
+    <div class="notes-active">
+      <h2 class="notes-active__title visually-hidden">Active notes list</h2>
+      <div class="notes-active__head-wrapper">
+        <div class="notes-active__head">
+          <span class="notes-active__name">Name</span>
+          <span class="notes-active__create">Created</span>
+          <span class="notes-active__category">Category</span>
+          <span class="notes-active__content">Content</span>
+          <span class="notes-active__date">Dates</span>
+        </div>
+        <div class="notes-active__icon-wrapper">
+          <svg class="notes-active__icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-box-add"></use>
+          </svg>
+          <svg class="notes-active__icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-bin"></use>
+          </svg>
+        </div>
+      </div>
+      <ul class="notes-active__list"></ul>
+      <button class="button__create-note" type="button">Create Note</button>
+    </div>
+    <div class="notes-category">
+      <h2 class="notes-category__title visually-hidden">Notes category list</h2>
+      <div class="notes-category__head">
+        <span class="notes-category__category">Notes category</span>
+        <span class="notes-category__active">Active</span>
+        <span class="notes-category__archive">Archived</span>
+      </div>
+
+      <ul class="notes-category__list"></ul>
+    </div>
+  </div>
+</section>

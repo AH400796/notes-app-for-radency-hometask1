@@ -1,7 +1,6 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   font-family: $font-text;
   font-style: normal;
@@ -10,20 +9,7 @@ body {
   color: $color-primary-text;
 
   &.show-modal,
-  &.show-modal1,
-  &.show-auth-modal {
+  &.show-modal-form {
     overflow: hidden;
   }
-}
-
-html {
-  height: 100%;
-}
-
-.above-footer {
-  flex: 1 0 auto;
-}
-
-.stiky-footer {
-  flex-shrink: 0;
 }

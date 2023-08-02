@@ -1,1 +1,3 @@
-# "Filmoteka" - the group project,  which includes the implementation of what has been learned and summarizes the material covered in the  HTML / CSS / JavaScript course.
+# "NOTE APP"
+
+Small project created as hometask #1 for Radency intern program. [ HTML / CSS / JavaScript ]

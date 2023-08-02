@@ -1,0 +1,92 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+
+  border: none;
+}
+
+.form__header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.form__radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  padding: 10px 10px 30px 10px;
+
+  border-radius: 10px;
+  border: none;
+  background-color: $color-accent;
+}
+
+.form__name-deadline-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 65%;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  background-color: $color-accent;
+}
+
+.form__input-name,
+.form__input-date {
+  align-self: flex-start;
+  width: 100%;
+  padding: 5px 5px 5px 15px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.form__textarea {
+  align-self: flex-start;
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.form__category {
+  align-self: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border: none;
+  color: $color-primary-text;
+}
+
+.form__radio-label {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}

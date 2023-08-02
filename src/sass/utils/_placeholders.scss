@@ -30,16 +30,4 @@
   border-radius: 5px;
 
   cursor: pointer;
-
-  @media screen and (min-width: ($tablet)) {
-    width: 152px;
-  }
-  @media screen and (min-width: ($desktop)) {
-    width: 148px;
-  }
-
-  &.current {
-    background-color: $color-accent;
-    border: 1px solid $color-accent;
-  }
 }

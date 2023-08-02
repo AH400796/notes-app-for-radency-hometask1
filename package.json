@@ -1,30 +1,22 @@
 {
-  "name": "parcel-project-template",
-  "version": "2.0.0",
+  "name": "note-app",
+  "version": "1.0.0",
   "description": "",
-  "homepage": "https://AH400796.github.io/fson60-group05-project-js",
+  "homepage": "https://AH400796.github.io/notes-app-for-radency-hometask1",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /fson60-group05-project-js/"
+    "build": "parcel build src/*.html --public-url /notes-app-for-radency-hometask1/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://AH400796.github.io/notes-app-for-radency-hometask1"
   },
-  "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Andrii Hokhman, a.hokhman@gmail.com",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
-  },
   "dependencies": {
-    "basiclightbox": "^5.0.4",
-    "firebase": "^9.15.0",
     "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
-    "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.5",
-    "tui-pagination": "^3.4.1"
+    "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.6.0",

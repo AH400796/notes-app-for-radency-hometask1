@@ -1,10 +1,6 @@
-import './js/create-markup';
-import './js/firebase';
-import './js/film-card-modal';
-import './js/pagination';
-import './js/footer-modal.js';
-import './js/get-trending';
-import './js/search';
-import './js/spinner';
-import './js/scroll-up';
-import './js/theme';
+import './js/create-notes-list';
+import './js/note-actions';
+
+import './js/modal';
+import './js/helpers';
+import './js/helpers';

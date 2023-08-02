@@ -1,6 +1,5 @@
 // UTIL STYLES
 @import './utils/variables';
-@import './utils/animation';
 @import './utils/placeholders';
 @import './utils/visually-hidden';
 
@@ -13,15 +12,10 @@
 
 @import './components/container';
 @import './components/buttons';
-@import './components/logo';
-@import './components/navigation';
-@import './components/scroll-up';
-@import './components/trailer';
-@import './components/pagination';
 
 // LAYOUTS STYLES
-@import './layouts/header';
-@import './layouts/gallery';
-@import './layouts/footer';
+
+@import './layouts/notes-list';
 @import './layouts/modal';
-@import './layouts/footer-modal';
+@import './layouts/form';
+@import './layouts/note-details';

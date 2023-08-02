@@ -1,0 +1,131 @@
+.notes__section {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.notes-active__list,
+.notes-category__list {
+  @extend %list;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.notes-active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.notes-active__list-item,
+.notes-category__list-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 5px 10px;
+  background-color: $color-accent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notes-active__list-item-icon,
+.notes-category__list-item-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  background-color: $color-gray;
+  border-radius: 50%;
+}
+
+.notes-active__head-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  color: $color-background;
+  background-color: $color-gray;
+  border-radius: 5px;
+
+  padding: 5px 21px 5px 60px;
+}
+
+.notes-active__icon-wrapper {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 23px;
+}
+
+.notes-active__icon {
+  width: 24px;
+  height: 24px;
+  fill: $color-background;
+}
+
+.notes-active__name {
+  width: 220px;
+}
+.notes-active__create {
+  width: 150px;
+}
+.notes-active__category {
+  width: 165px;
+}
+.notes-active__content {
+  width: 300px;
+}
+.notes-active__date {
+  width: 120px;
+}
+
+.notes-active__head {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  align-items: center;
+  width: 80px;
+}
+
+.notes-category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.notes-category__head {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  color: $color-background;
+  background-color: $color-gray;
+  border-radius: 5px;
+
+  padding: 5px 21px 5px 60px;
+}
+
+.notes-category__category {
+  width: 400px;
+}
+.notes-category__active {
+  width: 200px;
+}
+.notes-category__archive {
+  width: 200px;
+}

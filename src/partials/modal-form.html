@@ -1,0 +1,46 @@
+<div class="backdrop-form">
+  <div class="modal">
+    <div id="modal__form" class="modal__form">
+      <form class="form" action="" autocomplete="off">
+        <div class="form__header-wrapper">
+          <div class="form__radio-wrapper" role="group" aria-labelledby="note category">
+            <p class="form__category">Category</p>
+            <label class="form__radio-label">
+              <input class="form__radio-input" type="radio" name="category" value="Task" required />
+              Task
+            </label>
+            <label class="form__radio-label">
+              <input class="form__radio-input" type="radio" name="category" value="Idea" required />
+              Idea
+            </label>
+            <label class="form__radio-label">
+              <input class="form__radio-input" type="radio" name="category" value="Random Thought" required />
+              Random Thought</label
+            >
+          </div>
+          <div class="form__name-deadline-wrapper">
+            <label class="form__label">
+              Note name
+              <input class="form__input-name" type="text" required />
+            </label>
+            <label class="form__label">
+              Deadline
+              <input class="form__input-date" type="date" required />
+            </label>
+          </div>
+        </div>
+
+        <label class="form__label">
+          Note description
+          <textarea class="form__textarea" name="note description" rows="3" required />
+        </label>
+        <button class="modal__form-submit" type="submit" disabled></button>
+      </form>
+    </div>
+    <button class="modal__close-form" type="button">
+      <svg class="modal__svg" width="24" height="24">
+        <use href="./images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+</div>
